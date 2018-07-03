@@ -3,9 +3,8 @@
 using namespace cv;
 
 int main(int argc, char* argv[]) {
-	VideoCapture cap("Dogfight.mp4"); // open the video file for reading
-	if ( !cap.isOpened() )
-	return -1;
+	VideoCapture cap("../Dogfight.mp4"); // open the video file for reading
+	if ( !cap.isOpened() ) return -1;
 	//cap.set(CV_CAP_PROP_POS_MSEC, 300);
 	double fps = cap.get(CV_CAP_PROP_FPS);
 	//start the video at 300ms
@@ -21,6 +20,7 @@ int main(int argc, char* argv[]) {
 		}
 		imshow("MyVideo", frame); //show the frame in "MyVideo" window
 		if(waitKey(30) == 27) {
-		break;
+			break;
+		}	
 	}
 }
